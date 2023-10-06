@@ -92,7 +92,7 @@ return document.querySelector(dgClass + " .pagination .active a").textContent;
 
 ![](images/GetDataGridSelectedPageSetValue.png)
 
-## Reloading the current page
+## Reloading the current DataGrid page
 
 1. In an Event Handler, first drag in the *GetDataGridSelectedPage* script
 2. Enter the *DataGridClass* in the corresponding input parameter (e.g. datagrid-page-navigate)
