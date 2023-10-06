@@ -14,7 +14,7 @@ Check the *Enable Style Sheet* checkbox in the application properties
 
 Use the instructions from [this repo](https://github.com/stadium-software/samples-database) to setup the database and DataGrids for this sample
 
-## SetDataGridPage Setup
+## SetDataGridPage Global Script Setup
 
 1. Create a Global Script and call it "SetDataGridPage"
 2. Add the input parameters below to the script
@@ -76,7 +76,7 @@ observer.observe(table, options);
    1. DataGridClass: The class you assigned to the DataGrid (e.g. datagrid-page-navigate)
    2. PageNo: The page you wish to display in the DataGrid
 
-## GetDataGridSelectedPage Setup
+## GetDataGridSelectedPage Global Script Setup
 
 1. Create a Global Script and call it "GetDataGridSelectedPage"
 2. Add the input parameters below to the script
