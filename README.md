@@ -88,7 +88,7 @@ return document.querySelector(dgClass + " .pagination .active a").textContent;
 ```
 4. Drag a *SetValue* action below the *Javascript* action and set the properties
    1. Target: Select the *CurrentPageNo* in the *ScriptOutputParameters* category in the property dropdown
-   2. Value: = ~.JavaScript
+   2. Value: The return value from the JavaScript action (= ~.JavaScript)
 
 ![](images/GetDataGridSelectedPageSetValue.png)
 
