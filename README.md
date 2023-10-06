@@ -81,12 +81,14 @@ observer.observe(table, options);
 1. Create a Global Script and call it "GetDataGridSelectedPage"
 2. Add the input parameters below to the script
    1. DataGridClass
-3. Drag a Javascript action into the script and paste the Javascript below unaltered into the action
+3. Add the output parameters below to the script
+   1. CurrentPageNo
+4. Drag a Javascript action into the script and paste the Javascript below unaltered into the action
 ```
 let dgClass = "." + ~.Parameters.Input.DataGridClass;
 return document.querySelector(dgClass + " .pagination .active a").textContent;
 ```
-4. Drag a *SetValue* action below the *Javascript* action and set the properties
+1. Drag a *SetValue* action below the *Javascript* action and set the properties
    1. Target: Select the *CurrentPageNo* in the *ScriptOutputParameters* category in the property dropdown
    2. Value: The return value from the JavaScript action (= ~.JavaScript)
 
