@@ -24,6 +24,7 @@ Use the instructions from [this repo](https://github.com/stadium-software/sample
 ```
 let dgClass = "." + ~.Parameters.Input.DataGridClass;
 let table = document.querySelector(dgClass + " table");
+if (!table) table = document.querySelector(".data-grid-container table");
 let target = ~.Parameters.Input.PageNo;
 let current = document.querySelector(dgClass + " .pagination .active a").textContent;
 let steps = calculateSteps(current, target);
@@ -86,7 +87,9 @@ observer.observe(table, options);
 4. Drag a Javascript action into the script and paste the Javascript below unaltered into the action
 ```
 let dgClass = "." + ~.Parameters.Input.DataGridClass;
-return document.querySelector(dgClass + " .pagination .active a").textContent;
+let table = document.querySelector(dgClass + " table");
+if (!table) table = document.querySelector(".data-grid-container table");
+return table.querySelector(".pagination .active a").textContent;
 ```
 1. Drag a *SetValue* action below the *Javascript* action and set the properties
    1. Target: Select the *CurrentPageNo* in the *ScriptOutputParameters* category in the property dropdown
