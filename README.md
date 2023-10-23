@@ -21,7 +21,7 @@ Use the instructions from [this repo](https://github.com/stadium-software/sample
    1. DataGridClass
    2. PageNo
 3. Drag a Javascript action into the script and paste the Javascript below unaltered into the action
-```
+```javascript
 let dgClass = "." + ~.Parameters.Input.DataGridClass;
 let table = document.querySelector(dgClass + " table");
 if (!table) table = document.querySelector(".data-grid-container table");
@@ -85,7 +85,7 @@ observer.observe(table, options);
 3. Add the output parameters below to the script
    1. CurrentPageNo
 4. Drag a Javascript action into the script and paste the Javascript below unaltered into the action
-```
+```javascript
 let dgClass = "." + ~.Parameters.Input.DataGridClass;
 let table = document.querySelector(dgClass + " table");
 if (!table) table = document.querySelector(".data-grid-container table");
