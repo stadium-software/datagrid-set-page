@@ -68,13 +68,14 @@ observer.observe(table, options);
 ## Page Setup
 
 1. Drag a *DataGrid* control to the page (if you don't already have one)
-2. Add a class to identify the DataGrid *Classes* property (e.g. datagrid-page-navigate)
+2. Add a class to identify the DataGrid *Classes* property that uniquely identifies this DataGrid on this page (e.g. datagrid-page-navigate)
+3. Note: If multiple editable DataGrids are shown on one page, each DataGrid must have a unique classname
 
 ## Loading a specific DataGrid Page
 
 1. Drag the "SetDataGridPage" script into any event handler
 2. Complete the input parameters
-   1. DataGridClass: The class you assigned to the DataGrid (e.g. datagrid-page-navigate)
+   1. DataGridClass: The unique class you assigned to the DataGrid (e.g. datagrid-page-navigate)
    2. PageNo: The page you wish to display in the DataGrid
 
 ## GetDataGridSelectedPage Global Script Setup
