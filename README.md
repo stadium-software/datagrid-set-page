@@ -7,6 +7,9 @@ This sample contains two scripts:
 1. SetDataGridPage: A script that you can use to load a specific DataGrid page
 2. GetDataGridSelectedPage: A script that returns the currently selected page of a DataGrid
 
+# Version 
+1.1 Added logic to detect uniqueness of DataGrid class on page
+
 ## Application Setup
 Check the *Enable Style Sheet* checkbox in the application properties
 
@@ -22,12 +25,22 @@ Use the instructions from [this repo](https://github.com/stadium-software/sample
    2. PageNo
 3. Drag a Javascript action into the script and paste the Javascript below unaltered into the action
 ```javascript
-let dgClass = "." + ~.Parameters.Input.DataGridClass;
-let table = document.querySelector(dgClass + " table");
-if (!table) table = document.querySelector(".data-grid-container table");
+let dgClassName = "." + ~.Parameters.Input.DataGridClass;
+let dg = document.querySelectorAll(dgClassName);
+if (dg.length == 0) {
+    dg = document.querySelector(".data-grid-container");
+} else if (dg.length > 1) {
+    console.error("The class '" + dgClassName + "' is assigned to multiple DataGrids. DataGrids using this script must have unique classnames");
+    return false;
+} else { 
+    dg = dg[0];
+}
+let table = dg.querySelector("table");
 let target = ~.Parameters.Input.PageNo;
-let current = document.querySelector(dgClass + " .pagination .active a").textContent;
+let current = table.querySelector(".pagination .active a").textContent;
+
 let steps = calculateSteps(current, target);
+
 let options = {
         childList: true,
         subtree: true,
@@ -36,8 +49,8 @@ let options = {
 
 function navigateToPage() {
     observer.disconnect();
-    let next = document.querySelector(dgClass + " .pagination li:last-child a");
-    let previous = document.querySelector(dgClass + " .pagination li:first-child a");
+    let next = table.querySelector(".pagination li:last-child a");
+    let previous = table.querySelector(".pagination li:first-child a");
     if (steps > 0 && next) {
         next.click();
         steps--;
@@ -87,9 +100,17 @@ observer.observe(table, options);
    1. CurrentPageNo
 4. Drag a Javascript action into the script and paste the Javascript below unaltered into the action
 ```javascript
-let dgClass = "." + ~.Parameters.Input.DataGridClass;
-let table = document.querySelector(dgClass + " table");
-if (!table) table = document.querySelector(".data-grid-container table");
+let dgClassName = "." + ~.Parameters.Input.DataGridClass;
+let dg = document.querySelectorAll(dgClassName);
+if (dg.length == 0) {
+    dg = document.querySelector(".data-grid-container");
+} else if (dg.length > 1) {
+    console.error("The class '" + dgClassName + "' is assigned to multiple DataGrids. DataGrids using this script must have unique classnames");
+    return false;
+} else { 
+    dg = dg[0];
+}
+let table = dg.querySelector("table");
 return table.querySelector(".pagination .active a").textContent;
 ```
 1. Drag a *SetValue* action below the *Javascript* action and set the properties
