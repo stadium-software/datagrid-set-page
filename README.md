@@ -2,8 +2,11 @@
 
 https://github.com/stadium-software/datagrid-set-page/assets/2085324/d5dd57c9-f972-491a-a66a-e33eec752394
 
-This sample contains two scripts: 
+## Sample applications
+This repo contains one Stadium 6.7 application
+[SetDataGridPage.sapz](Stadium6/SetDataGridPage.sapz?raw=true)
 
+## Contents
 1. SetDataGridPage: A script that you can use to load a specific DataGrid page
 2. GetDataGridSelectedPage: A script that returns the currently selected page of a DataGrid
 
