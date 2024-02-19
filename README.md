@@ -28,7 +28,7 @@ Use the instructions from [this repo](https://github.com/stadium-software/sample
    2. PageNo
 3. Drag a Javascript action into the script and paste the Javascript below unaltered into the action
 ```javascript
-/* Stadium Script Version 1.1 */
+/* Stadium Script Version 1.1 https://github.com/stadium-software/datagrid-set-page */
 let dgClassName = "." + ~.Parameters.Input.DataGridClass;
 let dg = document.querySelectorAll(dgClassName);
 if (dg.length == 0) {
@@ -104,7 +104,7 @@ observer.observe(table, options);
    1. CurrentPageNo
 4. Drag a Javascript action into the script and paste the Javascript below unaltered into the action
 ```javascript
-/* Stadium Script Version 1.1 */
+/* Stadium Script Version 1.1 https://github.com/stadium-software/datagrid-set-page */
 let dgClassName = "." + ~.Parameters.Input.DataGridClass;
 let dg = document.querySelectorAll(dgClassName);
 if (dg.length == 0) {
