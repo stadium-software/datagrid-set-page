@@ -1,5 +1,11 @@
 # Set DataGrid Page
 
+## Note
+Stadium 6.8.3 has built-in the option to take users back to a specific DataGrid page. This repo is being deprecated and will be removed. For more info see [Stadium 6.8.3 release notes](https://community.stadium.software/community/t/stadium-6-8-3100/248)
+
+## Description
+With this module you can navigate a DataGrid to any page contained therein.
+
 https://github.com/stadium-software/datagrid-set-page/assets/2085324/d5dd57c9-f972-491a-a66a-e33eec752394
 
 ## Sample applications
